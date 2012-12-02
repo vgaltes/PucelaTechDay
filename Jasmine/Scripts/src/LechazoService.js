@@ -4,7 +4,7 @@ var LechazoService = LechazoService || {};
 
 var LechazoService = function (impresor) {
     var carrito = [],
-        servicioImpresion,
+        servicioImpresion = impresor,
         anadeLechazo = function (lechazo) {
             carrito.push(lechazo);
         },
@@ -16,7 +16,7 @@ var LechazoService = function (impresor) {
         },
         imprimeCarrito = function () {
             for (var indice in carrito) {
-                impresor.imprime(carrito[indice]);
+                servicioImpresion.imprime(carrito[indice]);
             }
         },
         enviaCarrito = function () {
@@ -28,7 +28,7 @@ var LechazoService = function (impresor) {
             carrito.splice(0, carrito.length);
         },
         nombreServicioImpresion = function () {
-            return impresor.nombre();
+            return servicioImpresion.nombre();
         },
         muestraConfirmacion = function () {
             $("#dialog").fadeToggle('fast');
@@ -66,16 +66,14 @@ var AlertPrinter = function () {
 
 var ConsolePrinter = function () {
     var imprime = function (lechazo) {
-        console.log("Mesa: " + lechazo.mesa + " | Punto de cocción: " + lechazo.puntoCoccion);
-    };
-
-    var imprimeMensaje = function (mensaje) {
-        console.log(mensaje);
-    };
-
-    var nombre = function () {
-        return "ConsolePrinter";
-    };
+            console.log("Mesa: " + lechazo.mesa + " | Punto de cocción: " + lechazo.puntoCoccion);
+        },
+        imprimeMensaje = function (mensaje) {
+            console.log(mensaje);
+        },
+        nombre = function () {
+            return "ConsolePrinter";
+        };
 
     return {
         imprime: imprime,

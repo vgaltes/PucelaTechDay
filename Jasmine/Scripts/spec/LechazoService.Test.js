@@ -268,6 +268,21 @@ describe("espiando a jquery", function () {
         expect($.ajax.mostRecentCall.args[0].data).toEqual('{"data":[]}');
     });
 
+    it("simulamos una llamada ajax", function () {
+        var result = "{'Result': '0'}",
+            printer = new ConsolePrinter();
+
+        spyOn(printer, "imprimeMensaje");
+        spyOn($, "ajax").andCallFake(function (options) {
+            options.success(result);
+        });
+
+        var lechazoService = new LechazoService(printer);
+        lechazoService.enviaCarrito();
+
+        expect(printer.imprimeMensaje).toHaveBeenCalledWith(result);
+    });
+
     it("espiamos un selector", function () {
         spyOn($.fn, "fadeToggle");
 
