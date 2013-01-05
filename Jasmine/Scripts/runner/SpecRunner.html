@@ -8,10 +8,11 @@
   <link rel="stylesheet" type="text/css" href="../libs/jasmine-1.2.0/jasmine.css">
   <script type="text/javascript" src="../libs/jasmine-1.2.0/jasmine.js"></script>
   <script type="text/javascript" src="../libs/jasmine-1.2.0/jasmine-html.js"></script>
-  <script src="../libs/jquery-1.8.3.min.js"></script>
-
+  <script type="text/javascript" src="../libs/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="../libs/blanket/blanket.min.js" data-cover-adapter="../libs/blanket/jasmine-blanket.js" ></script>
+  
   <!-- include source files here... -->
-  <script type="text/javascript" src="../src/LechazoService.js"></script>
+  <script type="text/javascript" src="../src/LechazoService.js" data-cover></script>
   
   <!-- include spec files here... -->
   <script type="text/javascript" src="../spec/LechazoService.Test.js"></script>

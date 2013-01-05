@@ -38,6 +38,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="Scripts\libs\blanket\blanket.min.js" />
+    <Content Include="Scripts\libs\blanket\jasmine-blanket.js" />
     <Content Include="Scripts\libs\jasmine-1.2.0\jasmine-html.js" />
     <Content Include="Scripts\libs\jasmine-1.2.0\jasmine.css" />
     <Content Include="Scripts\libs\jasmine-1.2.0\jasmine.js" />
