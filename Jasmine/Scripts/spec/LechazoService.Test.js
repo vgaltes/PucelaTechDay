@@ -1,4 +1,5 @@
-﻿/// <reference path="../libs/jquery-1.8.3.min.js" />
+﻿/// <reference path="../libs/jasmine-1.2.0/jasmine.js" />
+/// <reference path="../libs/jquery-1.8.3.min.js" />
 /// <reference path="../src/LechazoService.js" />
 
 describe("jasmine organiza sus tests en suites, utilizando la función describe", function () {
@@ -20,7 +21,7 @@ describe("jasmine organiza sus tests en suites, utilizando la función describe"
 
 	it("podemos utilizar comparaciones negativas", function () {
 		var a = false;
-		expect(a).not.toBe(true);
+		expect(a).not.toBe(false);
 	});
 });
 
